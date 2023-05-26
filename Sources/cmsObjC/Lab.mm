@@ -18,7 +18,7 @@ struct Lab {
     Lab(float l, float a, float b) : l(l), a(a), b(b) {}
 };
 
-Lab &rgb2lab(cmsHTRANSFORM &xform, Rgb &rgbColor) {
+Lab rgb2lab(cmsHTRANSFORM &xform, Rgb &rgbColor) {
     Lab labColor;
     float rgbValues[3];
     float labValues[3];
@@ -30,7 +30,7 @@ Lab &rgb2lab(cmsHTRANSFORM &xform, Rgb &rgbColor) {
     return lab;
 }
 
-Rgb &lab2rgb(cmsHTRANSFORM &xform, Lab &labColor) {
+Rgb lab2rgb(cmsHTRANSFORM &xform, Lab &labColor) {
     float rgbValues[3];
     float labValues[3];
     labValues[0] = labColor.l;
